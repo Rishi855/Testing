@@ -14,7 +14,7 @@ const (
 	baseURL       = "https://short-link.me/"
 	prefix        = "12"          // Can change to "ZD"
 	totalLength   = 5
-	numChecks     = 1000            // Number of URLs to generate
+	numChecks     = 10          // Number of URLs to generate
 	requestTimeout = 5 * time.Second
 )
 
@@ -52,7 +52,7 @@ func checkURL(code string, wg *sync.WaitGroup, mu *sync.Mutex, results *[]string
 
 	resp, err := client.Get(fullURL)
 	if err != nil {
-		// fmt.Printf("❌ Error: %s - %s\n", fullURL, err)
+		fmt.Printf("❌ Error: %s - %s\n", fullURL, err)
 		return
 	}
 	defer resp.Body.Close()
@@ -66,7 +66,7 @@ func checkURL(code string, wg *sync.WaitGroup, mu *sync.Mutex, results *[]string
 		*results = append(*results, fullURL)
 		mu.Unlock()
 	} else {
-		// fmt.Printf("⚠️ Skipped: %s\n", fullURL)
+		fmt.Printf("⚠️ Skipped: %s\n", fullURL)
 	}
 }
 
@@ -78,7 +78,7 @@ func main() {
 	var workingLinks []string
 
 	for i := 0; i < numChecks; i++ {
-		code := generateRandomCode(prefix, totalLength)
+		code := "12GlU"
 		wg.Add(1)
 		go checkURL(code, &wg, &mu, &workingLinks)
 	}
