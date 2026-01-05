@@ -1,2 +1,4 @@
 github.com/gorilla/mux v1.8.1 h1:TuBL49tXwgrFYWhqrNgrUNEY92u81SPhu7sTdzQEiWY=
 github.com/gorilla/mux v1.8.1/go.mod h1:AKf9I4AEqPTmMytcMc0KkNouC66V3BtZ4qD5fmWSiMQ=
+github.com/BourgeoisBear/email.v2 v0.0.0-20250109080749-da1a8610d29d h1:kzzl5iEprL/DtoYeikpvhJ+2wXR4TAo/ZlB+FCkY9fU=
+github.com/BourgeoisBear/email.v2 v0.0.0-20250109080749-da1a8610d29d/go.mod h1:1VfKOHheO2hA2TopdTUHsal4bsHeLsln9OWojAusYyg=
